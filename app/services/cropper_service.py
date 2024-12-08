@@ -11,16 +11,16 @@ logging.basicConfig(level=logging.DEBUG)  # Establece el nivel de logging
 
 # Cargar el modelo YOLOv5
 model1 = get_yolov5_1()
-model2 = get_yolov5_2()
+# model2 = get_yolov5_2()
 
 # Función para procesar la imagen, detectar narices y dibujar las cajas
 def detect_nose_to_dict(binary_image):
     input_image = resize_image(binary_image)
-    results = model2(input_image)
+    results = model1(input_image)
     df = results.pandas().xyxy[0]
-    if df.empty:
-        results = model1(input_image)
-        df = results.pandas().xyxy[0]
+    # if df.empty:
+    #     results = model2(input_image)
+    #     df = results.pandas().xyxy[0]
     # df to dict
     detect_res = df.to_dict(orient="records")
     logging.debug("deteeeeeeect "+ str(detect_res))
