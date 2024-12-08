@@ -1,4 +1,4 @@
-from app.services.segmentation import resize_image, get_yolov5_1, get_yolov5_2
+from app.services.segmentation import resize_image, get_yolov5_1#, get_yolov5_2
 from PIL import Image
 from PIL import Image
 from io import BytesIO
