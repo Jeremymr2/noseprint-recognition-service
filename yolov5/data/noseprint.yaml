@@ -1,0 +1,7 @@
+path: ../dataset/train
+train: images
+val: images
+test: #optional
+
+nc: 1
+names: ['0 nose']
