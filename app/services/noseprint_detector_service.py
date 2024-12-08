@@ -12,7 +12,7 @@ async def noseprint_detector_service(first_image, second_image):
     first_image = base64.b64encode(buffer_one).decode('utf-8')
     second_image = base64.b64encode(buffer_two).decode('utf-8')
 
-    url = "http://localhost:8003/api/v1/predict"
+    url = "http://54.207.114.48/api/v1/predict"
     data = {"image_1": first_image, "image_2": second_image}
     async with httpx.AsyncClient() as client:
         response = await client.post(url, json=data)
